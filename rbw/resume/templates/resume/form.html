@@ -1,0 +1,257 @@
+{% extends 'resume/basic.html' %}
+{% block title %} Title of form{% endblock %}
+{% block body %}
+<div class="container">
+<form method="post" >
+    {% csrf_token %}
+
+    <br>
+    <a href="/resume/finalresume/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">SEE YOUR RESUME</a>
+
+  <br>
+  <h3><b>Personal Information:</b></h3>
+  <br>
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">First Name</label>
+    <textarea class="form-control" id="firstname" rows="1" name="firstname"></textarea>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Last Name</label>
+    <textarea class="form-control" id="lastname" rows="1" name="lastname"></textarea>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Job title</label>
+    <textarea class="form-control" id="jobtitle" rows="1" name="jobtitle"></textarea>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Job description</label>
+    <textarea class="form-control" id="description" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Mobile Number</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="phone"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Years of experience</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Profile:</label>
+    <textarea class="form-control" id="profile" rows="3" name="profile"></textarea>
+  </div>
+
+  <br>
+  <h3><b>Skills</b>:</h3>
+  <br>
+  <h4>Skill 1:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Skill Name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput34" placeholder="Enter skill name" name="skill1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Skill description</label>
+            <textarea class="form-control" id="skilldesc1" rows="3" name="skilldesc1"></textarea>
+          </div>
+
+    </div>
+  <h4>Skill 2:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Skill Name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput22" placeholder="Enter skill name" name="skill2">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Skill description</label>
+            <textarea class="form-control" id="skilldesc2" rows="3" name="skilldesc2" ></textarea>
+          </div>
+
+    </div>
+  <h4>Skill 3:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Skill Name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInputw" placeholder="Enter skill name" name="skill3">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Skill description</label>
+            <textarea class="form-control" id="skilldesc3" rows="3" name="skilldesc3"></textarea>
+          </div>
+
+    </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><b>Technical</b></span>
+    </div>
+    <input type="text" class="form-control" placeholder="techinque1" name="tech1">
+    <input type="text" class="form-control" placeholder="techinque2" name="tech2">
+    <input type="text" class="form-control" placeholder="techinque3" name="tech3">
+    <input type="text" class="form-control" placeholder="techinque4" name="tech4">
+    <input type="text" class="form-control" placeholder="techinque5" name="tech5">
+    <input type="text" class="form-control" placeholder="techinque6" name="tech6">
+  </div>
+
+  <br>
+  <h3><b>Experience:</b></h3>
+  <br>
+  <h4>Job 1:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Job title:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput23" placeholder="Enter job name" name="job1">
+          </div>
+           <div class="form-group">
+            <label for="formGroupExampleInput">Company Name:</label>
+            <input type="text" class="form-control" id="comname1" placeholder="Enter company name" name="comname1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear1">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Job description</label>
+            <textarea class="form-control" id="jobdesc1" rows="3" name="jt1"></textarea>
+          </div>
+
+    </div>
+  <h4>Job 2:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Job title:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput222" placeholder="Enter job name" name="job2">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Company Name:</label>
+            <input type="text" class="form-control" id="comname2" placeholder="Enter company name" name="comname2">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear2">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto2">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Job description</label>
+            <textarea class="form-control" id="jobdesc2" rows="3" name="jt2"></textarea>
+          </div>
+
+    </div>
+  <h4>Job 3:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Job title:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput44" placeholder="Enter job name" name="job3">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Company Name:</label>
+            <input type="text" class="form-control" id="comname3" placeholder="Enter company name" name="comname3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear3">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto3">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Job description</label>
+            <textarea class="form-control" id="jobdesc3" rows="3" name="jt3"></textarea>
+          </div>
+
+    </div>
+  <h4>Job 4:</h4>
+  <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Job title:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter job name" name="job4">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Company Name:</label>
+            <input type="text" class="form-control" id="comname4" placeholder="Enter company name" name="comname4">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear4">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto4">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Job description</label>
+            <textarea class="form-control" id="jobdesc4" rows="3" name="jt4"></textarea>
+          </div>
+
+    </div>
+
+  <br>
+  <h3><b>Education:</b></h3>
+  <br>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="university">University</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="university">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="degree">Degree</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="degree">
+  </div>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+      <span class="input-group-text" id="gpa">GPA</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="gpa">
+  </div>
+
+   <br>
+
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-outline-success">Submit</button>
+
+</form>
+  <br>
+</div>
+
+{% endblock %}
