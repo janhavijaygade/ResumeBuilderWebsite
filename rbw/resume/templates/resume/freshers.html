@@ -1,10 +1,15 @@
+{% load static %}
 
+<head>
+<!--*****************FRESHERS RESUME******************-->
 <!DOCTYPE html>
 <html>
 <head>
 
 <!--TITLE-->
-<title>LEVIOOSA RESUME</title>
+<title>{% for information in info3 %} {{ information.firstname }} {{ information.lastname }} {% endfor %} |
+		{% for information in info3 %} {{ information.jobtitle }} {% endfor %} |
+		{% for information in info3 %} {{ information.email }} {% endfor %}</title>
 
 <!--ICON-->
 <link rel="shortcut icon" href="images/logo.png">
@@ -18,12 +23,12 @@
 <meta name="keywords" content="">
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="" />
-<meta property="og:site_name" content="LEVIOOSA RESUME" />
+<meta property="og:site_name" content "RESUME" />
 
 
 <!--GOOGLE FONTS-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&family=Ubuntu&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
 
 <!--PLUGIN-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -59,10 +64,48 @@ background: gray;
 background: #000;
 }
 
+<!--div boxes end of page-->
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
 
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
 
 
 
@@ -161,18 +204,7 @@ border-radius:50%;
 margin:auto;
 }
 
-.container .progress_container{
-width:90%;
-height:10px;
-border-radius:20px;
-background:#1e1e1e;
-}
 
-.container .progress_container .progress_bar{
-background:#3399ff;
-border-radius:20px;
-height:10px;
-}
 
 .container .section_right{
 padding:30px;
@@ -211,109 +243,108 @@ position:static;
 display:block;
 }
 }
-</style
+</style>
 </head>
-
 <body>
+{% csrf_token %}
 <div class="container">
 <section class="section_left">
 <center>
-<img src="https://source.unsplash.com/weekly?person" alt="AUTHOR">
-<h1 class="title">LEVIOOSA</h1>
+<img src="https://britz.mcmaster.ca/images/nouserimage.gif/image" alt="PHOTO">
+<h1 class="title">{% for information in info3 %}
+						{{ information.firstname }} {{ information.lastname }}
+						{% endfor %}</h1>
 </center>
 <hr></hr>
-
 <h5 class="sub-title">CONTACT INFO</h5>
 <ul>
-<li><i class="fa fa-phone"></i> +xx-xxxxx-xxxxx</li>
-<li><i class="fa fa-envelope"></i> Levioosa@mail.com</li>
-<li><i class="fa fa-globe"></i> www.Levioosa.tech</li>
-<li><i class="fa fa-map-marker"></i> Street, Province, State, Country</li>
+<li><i class="fa fa-phone"></i>{% for information in info3 %} {{ information.phone }} {% endfor %}</li>
+<li><i class="fa fa-envelope"></i>{% for information in info3 %} {{ information.email }} {% endfor %}</li>
+<li><i class="fa fa-globe"></i>{% for information in info3 %} {{ information.linkedin }} {% endfor %}</li>
+<li><i class="fa fa-map-marker"></i>{% for information in info3 %} {{ information.address }} {% endfor %}</li>
 <ul>
-
-
 <h5 class="sub-title">EDUCATION</h5>
 <em>Primary</em>
-<p>School name - year to year</p>
+<p>{% for information in info3 %} {{ information.school }} {% endfor %}
+  - {% for information in info3 %} {{ information.fromyear1 }} {% endfor %} to
+  {% for information in info3 %} {{ information.Upto1 }} {% endfor %}</p>
 <em>College</em>
-<p>College name - year to year</p>
+<p>{% for information in info3 %} {{ information.college }} {% endfor %}
+  - {% for information in info3 %} {{ information.fromyear2 }} {% endfor %} to
+  {% for information in info3 %} {{ information.Upto2 }} {% endfor %}</p>
 <em>Graduation</em>
-<p>Collage name - year to year</p>
+<p>{% for information in info3 %} {{ information.graduation }} {% endfor %}
+  - {% for information in info3 %} {{ information.fromyear3 }} {% endfor %} to
+  {% for information in info3 %} {{ information.Upto3 }} {% endfor %}</p>
 
 <h5 class="sub-title">LANGUAGE</h5>
-<label>Language-1</label>
-<div class="progress_container">
-<div class="progress_bar" style="width:25%"></div>
-</div>
-<label>Language-2</label>
-<div class="progress_container">
-<div class="progress_bar" style="width:25%"></div>
-</div>
-<label>Language-3</label>
-<div class="progress_container">
-<div class="progress_bar" style="width:90%"></div>
-</div>
+
+    <div><p>{% for information in info3 %} {{ information.lang1 }} {% endfor %}</p></div>
+
+ <div><p>{% for information in info3 %} {{ information.lang2 }} {% endfor %}</p></div>
+
+ <div><p>{% for information in info3 %} {{ information.lang3 }} {% endfor %}</p></div>
+
 </section>
-
-
 <section class="section_right">
-<h1 class="title">PROFILE</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-<h1 class="title">PROJECTS</h1>
-<h5 class="sub-title">Web developer & designer</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-<em style="float:right;">Period Of Work</em>
-<h5 class="sub-title">Web developer & designer</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-<em style="float:right;">Period Of Work</em>
-<h5 class="sub-title">Web developer & designer</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-<em style="float:right;">Period Of Work</em>
 
+<h1 class="title">PROFILE</h1>
+<p>{% for information in info3 %} {{ information.profile }} {% endfor %}</p>
+
+<h1 class="title">PROJECTS</h1>
+<h5 class="sub-title">{% for information in info3 %} {{ information.projecttitle1 }} {% endfor %}</h5>
+<p>{% for information in info3 %} {{ information.desc1 }} {% endfor %}</p>
+<em style="float:right;">{% for information in info3 %} {{ information.projectskill1 }} {% endfor %}</em>
+
+<h5 class="sub-title">{% for information in info3 %} {{ information.projecttitle2 }} {% endfor %}</h5>
+<p>{% for information in info3 %} {{ information.desc2 }} {% endfor %}</p>
+<em style="float:right;">{% for information in info3 %} {{ information.projectskill2 }} {% endfor %}</em>
+
+<h5 class="sub-title">{% for information in info3 %} {{ information.projecttitle3 }} {% endfor %}</h5>
+<p>{% for information in info3 %} {{ information.desc3 }} {% endfor %}</p>
+<em style="float:right;">{% for information in info3 %} {{ information.projectskill3 }} {% endfor %}</em>
 
 <h1 class="title">PROFESSIONAL SKILLS</h1>
-<table>
-<tr>
-<td>
-HTML
-</td>
-<td>
-<div class="progress_container">
-<div class="progress_bar" style="width:90%"></div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>{% for information in info3 %} {{ information.tech1 }} {% endfor %}</h3>
+         <br>
+      <h3>{% for information in info3 %} {{ information.tech5 }} {% endfor %}</h3>
+
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{% for information in info3 %} {{ information.tech2 }} {% endfor %}</h3>
+         <br>
+      <h3>{% for information in info3 %} {{ information.tech6 }} {% endfor %}</h3>
+
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{% for information in info3 %} {{ information.tech3 }} {% endfor %}</h3>
+         <br>
+      <h3>{% for information in info3 %} {{ information.tech7 }} {% endfor %}</h3>
+
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{% for information in info3 %} {{ information.tech4 }} {% endfor %}</h3>
+        <br>
+      <h3>{% for information in info3 %} {{ information.tech8 }} {% endfor %}</h3>
+
+    </div>
+  </div>
 </div>
-</td>
-</tr>
-<tr>
-<td>
-HTML
-</td>
-<td>
-<div class="progress_container">
-<div class="progress_bar" style="width:90%"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-HTML
-</td>
-<td>
-<div class="progress_container">
-<div class="progress_bar" style="width:90%"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-HTML
-</td>
-<td>
-<div class="progress_container">
-<div class="progress_bar" style="width:90%"></div>
-</div>
-</td>
-</tr>
-</table>
+
 </section>
 </div>
+
+

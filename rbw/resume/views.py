@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'resume/index.html')
 
 
-from .models import Information, Infosecond
+from .models import Information, Infosecond, Freshers
 
 
 def form(request):
@@ -258,3 +258,71 @@ def trial(request):
     data = Infosecond.objects.all()
     examp2 = {"info2": data}
     return render(request, 'resume/trial.html', examp2)
+
+
+def formfreshers(request):
+    if request.method == "POST":
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        linkedin = request.POST['linkedin']
+        address = request.POST['address']
+        profile = request.POST['profile']
+
+
+        school = request.POST['school']
+        Upto1 = request.POST['Upto1']
+        fromyear1 = request.POST['fromyear1']
+        college = request.POST['college']
+        Upto2 = request.POST['Upto2']
+        fromyear2 = request.POST['fromyear2']
+        graduation = request.POST['graduation']
+        Upto3 = request.POST['Upto3']
+        fromyear3 = request.POST['fromyear3']
+
+        lang1 = request.POST['lang1']
+        lang2 = request.POST['lang2']
+        lang3 = request.POST['lang3']
+
+        projecttitle1 = request.POST['projecttitle1']
+        projectskill1 = request.POST['projectskill1']
+        desc1 = request.POST['desc1']
+        projecttitle2 = request.POST['projecttitle2']
+        projectskill2 = request.POST['projectskill2']
+        desc2 = request.POST['desc2']
+        projecttitle3 = request.POST['projecttitle3']
+        projectskill3 = request.POST['projectskill3']
+        desc3 = request.POST['desc3']
+
+        tech1 = request.POST['tech1']
+        tech2 = request.POST['tech2']
+        tech3 = request.POST['tech3']
+        tech4 = request.POST['tech4']
+        tech5 = request.POST['tech5']
+        tech6 = request.POST['tech6']
+        tech7 = request.POST['tech7']
+        tech8 = request.POST['tech8']
+
+        if len(firstname) < 2 or len(lastname) < 2 or len(email) < 3 or len(phone) < 10:
+            messages.error(request, "Please fill the form correctly")
+        else:
+            formfreshers = Freshers(firstname=firstname, lastname=lastname, email=email, phone=phone,
+                                    linkedin=linkedin, address=address, school=school,
+                                    Upto1=Upto1,profile=profile
+                                    , fromyear1=fromyear1, college=college, Upto2=Upto2, fromyear2=fromyear2
+                                    , graduation=graduation, Upto3=Upto3, fromyear3=fromyear3,
+                                    lang1=lang1, lang2=lang2, lang3=lang3, projecttitle1=projecttitle1,
+                                    projectskill1=projectskill1, desc1=desc1, projecttitle2=projecttitle2,
+                                    projectskill2=projectskill2, desc2=desc2, projecttitle3=projecttitle3,
+                                    projectskill3=projectskill3, desc3=desc3, tech1=tech1, tech2=tech2,
+                                    tech3=tech3, tech4=tech4, tech5=tech5, tech6=tech6, tech7=tech7, tech8=tech8, )
+            formfreshers.save()
+            messages.success(request, "Your message has been successfully sent")
+    return render(request, 'resume/formfreshers.html')
+
+
+def freshers(request):
+    data = Freshers.objects.all()
+    examp3 = {"info3": data}
+    return render(request, 'resume/freshers.html', examp3)

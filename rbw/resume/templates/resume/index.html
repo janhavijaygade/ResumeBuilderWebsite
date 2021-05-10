@@ -1,5 +1,22 @@
 {% extends 'resume/basic.html' %}
 {% block title %} Create a Perfect Resume{% endblock %}
+
+{% block css %}
+    .btn-outline-info {
+    color: #2d3233;
+    border-color: #212529;
+}
+.btn {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #055160;
+    border-color: #7ec0cd;
+}
+{% endblock %}
+
 {% block body %}
 {% load static %}
 <div class="container">
@@ -21,7 +38,7 @@
     </div>
     </div>
     <div class="col">
-      <img src=' {% static "resume/tem2.jpg" %}'>
+      <img src=' {% static "resume/tem2.jpg" %}' >
     </div>
   </div>
   </div>
@@ -32,10 +49,11 @@
 <!-- Templates -->
     <div class="container text-center my-3" style="display:flex;">
       <div class="card" >
-        <img src=' {% static "resume/template1.jfif" %}' class="card-img-top" alt="...">
+        <img src=' {% static "resume/template1.jfif" %}' class="card-img-top" alt="..." width="246.29" height="352.38">
         <div class="card-body">
-          <h5 class="card-title">template1</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">Experienced</h5>
+          <p class="card-text">Create a modern resume that will result in interview callbacks. All key things on a single page.
+            Fast & easy-to-use.</p>
           <a href="/resume/form" class="btn btn-primary">Build my resume</a>
         </div>
       </div>
@@ -43,18 +61,19 @@
       <div class="card" >
         <img src=' {% static "resume/tem3.jfif" %}' class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">template2</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">Experienced</h5>
+          <p class="card-text">Let us help you with the design, so you can focus on promoting your skills and landing your dream job.</p>
           <a href="/resume/form2" class="btn btn-primary">Build my resume</a>
         </div>
       </div>
 
       <div class="card" >
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{% static "resume/fresherstem.jpg" %}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">template3</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Build my resume</a>
+          <h5 class="card-title">Fresher</h5>
+          <p class="card-text">Create a perfect resume in just a few steps. Increase your chance of getting a job by creating your CV with our CV templates!
+            Organize your application. Quick and easy</p>
+          <a href="/resume/formfreshers" class="btn btn-primary">Build my resume</a>
         </div>
       </div>
     </div>

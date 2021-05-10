@@ -195,3 +195,58 @@ class Infosecond(models.Model):
 
     def __str__(self):
         return "Information from " + self.firstname + ' - ' + self.email
+
+
+class Freshers(models.Model):
+    firstname = models.CharField(max_length=25, blank=True)
+    lastname = models.CharField(max_length=25, blank=True)
+    email = models.CharField(max_length=100)
+    phone = models.CharField(max_length=13)
+    address = models.CharField(max_length=50 ,default="")
+    profile = models.CharField(max_length=200 ,default="")
+    linkedin = models.CharField(max_length=12)
+
+
+    #education
+    school = models.CharField(max_length=15)
+    Upto1 = models.CharField(max_length=4)
+    fromyear1 = models.IntegerField()
+    college = models.CharField(max_length=15)
+    Upto2 = models.CharField(max_length=4)
+    fromyear2 = models.IntegerField()
+    graduation = models.CharField(max_length=15)
+    Upto3 = models.CharField(max_length=4)
+    fromyear3 = models.IntegerField()
+
+    #languages
+    lang1 = models.CharField(max_length=15)
+    lang2 = models.CharField(max_length=15)
+    lang3 = models.CharField(max_length=15)
+
+    #projects
+    projecttitle1 = models.CharField(max_length=15)
+    projectskill1 = models.CharField(max_length=10)
+    desc1 = models.CharField(max_length=350)
+    projecttitle2 = models.CharField(max_length=15)
+    projectskill2 = models.CharField(max_length=10)
+    desc2 = models.CharField(max_length=350)
+    projecttitle3 = models.CharField(max_length=15)
+    projectskill3 = models.CharField(max_length=10)
+    desc3 = models.CharField(max_length=350)
+
+    #professional skills
+    tech1 = models.CharField(max_length=15 ,default="")
+    tech2 = models.CharField(max_length=15,default="")
+    tech3 = models.CharField(max_length=15,default="")
+    tech4 = models.CharField(max_length=15,default="")
+    tech5 = models.CharField(max_length=15,default="")
+    tech6 = models.CharField(max_length=15,default="")
+    tech7 = models.CharField(max_length=15,default="")
+    tech8 = models.CharField(max_length=15,default="")
+
+
+    timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return "Message from " + self.firstname + ' - ' + self.email
+

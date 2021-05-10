@@ -1,0 +1,197 @@
+{% extends 'resume/basic.html' %}
+{% block title %} Freshers {% endblock %}
+{% block body %}
+<div class="container">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <br>
+    <a href="/resume/freshers/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">SEE YOUR RESUME</a>
+
+   <br>
+  <h3><b>Personal Information:</b></h3>
+  <br>
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">First Name</label>
+    <textarea class="form-control" id="firstname" rows="1" name="firstname"></textarea>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleFormControlTextarea1">Last Name</label>
+    <textarea class="form-control" id="lastname" rows="1" name="lastname"></textarea>
+  </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Mobile Number</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="phone"></textarea>
+  </div>
+
+     <label for="basic-url">Your linkedIn URL</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+          </div>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="linkedin">
+        </div>
+
+    <div class="form-group">
+            <label for="exampleFormControlTextarea1">Address</label>
+            <textarea class="form-control" id="summary" rows="3" name="address"></textarea>
+    </div>
+    <div class="form-group">
+            <label for="exampleFormControlTextarea1">Profile</label>
+            <textarea class="form-control" id="profile" rows="4" name="profile"></textarea>
+    </div>
+<br>
+
+<br>
+  <h3><b>Education:</b></h3>
+  <br>
+    <h4>Primary:</h4>
+    <div class="form-group">
+            <label for="formGroupExampleInput">School name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter school name" name="school">
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear1">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto1">
+    </div>
+    <h4>College:</h4>
+    <div class="form-group">
+            <label for="formGroupExampleInput">College name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter College name" name="college">
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear2">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto2">
+    </div>
+    <h4>Graduation:</h4>
+    <div class="form-group">
+            <label for="formGroupExampleInput">College name:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter college name" name="graduation">
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Year</span>
+            </div>
+            <input type="text" class="form-control" placeholder="From" name="fromyear3">
+            <input type="text" class="form-control" placeholder="Upto" name="Upto3">
+    </div>
+
+
+    <br>
+  <h3><b>Languages:</b></h3>
+  <br>
+    <div class="form-group">
+            <label for="formGroupExampleInput">Language 1(Native):</label>
+            <input type="text" class="form-control" id="lang1" placeholder="Enter language" name="lang1">
+          </div>
+    <div class="form-group">
+            <label for="formGroupExampleInput">Language 1(Professional):</label>
+            <input type="text" class="form-control" id="lang2" placeholder="Enter language" name="lang2">
+          </div>
+    <div class="form-group">
+            <label for="formGroupExampleInput">Language 1(Professional):</label>
+            <input type="text" class="form-control" id="lang3" placeholder="Enter language" name="lang3">
+          </div>
+
+
+    <h3><b>Projects:</b></h3>
+    <br>
+    <h4>Project 1:</h4>
+    <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Project title:</label>
+            <input type="text" class="form-control" id="projecttitle1" placeholder="Enter project title name" name="projecttitle1">
+          </div>
+           <div class="form-group">
+            <label for="formGroupExampleInput">Skill used:</label>
+            <input type="text" class="form-control" id="projectskill1" placeholder="Enter project skill name" name="projectskill1">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Project description</label>
+            <textarea class="form-control" id="prodesc1" rows="3" name="desc1"></textarea>
+          </div>
+    </div>
+    <h4>Project 2:</h4>
+    <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Project title:</label>
+            <input type="text" class="form-control" id="projecttitle2" placeholder="Enter project title name" name="projecttitle2">
+          </div>
+           <div class="form-group">
+            <label for="formGroupExampleInput">Skill used:</label>
+            <input type="text" class="form-control" id="projectskill2" placeholder="Enter project skill name" name="projectskill2">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Project description</label>
+            <textarea class="form-control" id="prodesc2" rows="3" name="desc2"></textarea>
+          </div>
+    </div>
+    <h4>Project 3:</h4>
+    <div class="container p-3 my-3">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Project title:</label>
+            <input type="text" class="form-control" id="projecttitle3" placeholder="Enter project title name" name="projecttitle3">
+          </div>
+           <div class="form-group">
+            <label for="formGroupExampleInput">Skill used:</label>
+            <input type="text" class="form-control" id="projectskill3" placeholder="Enter project skill name" name="projectskill3">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Project description</label>
+            <textarea class="form-control" id="prodesc3" rows="3" name="desc3"></textarea>
+          </div>
+    </div>
+
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><b>Professional Skills:</b></span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech1">
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech2">
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech3">
+        <input type="text" class="form-control" placeholder="Enter Skill" name="tech4">
+  </div>
+    <div>
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech5">
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech6">
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech7">
+    <input type="text" class="form-control" placeholder="Enter Skill" name="tech8">
+  </div>
+<br>
+
+<div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-outline-success">Submit</button>
+
+</form>
+  <br>
+</div>
+
+{% endblock %}
